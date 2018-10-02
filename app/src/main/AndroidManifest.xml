@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.everlapp.cleanarch">
 
+    <!--Permissions-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
     <application
         android:name=".AndroidApplication"
         android:allowBackup="true"
@@ -12,13 +16,24 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".features.MainActivity">
+        <!-- Activities -->
+        <activity
+            android:name=".core.navigation.RouteActivity"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Translucent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity android:name=".features.MainActivity"/>
+
+        <activity android:name=".features.movies.MoviesActivity"/>
+
+
     </application>
 
 </manifest>
