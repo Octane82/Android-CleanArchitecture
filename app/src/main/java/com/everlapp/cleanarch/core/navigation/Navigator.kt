@@ -4,14 +4,14 @@ import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.support.v4.app.FragmentActivity
 import android.view.View
 import com.everlapp.cleanarch.core.extension.empty
-import com.everlapp.cleanarch.features.movies.MovieView
+import com.everlapp.cleanarch.features.login.Authenticator
 import com.everlapp.cleanarch.features.movies.MoviesActivity
-import java.net.Authenticator
+
 import javax.inject.Inject
 import javax.inject.Singleton
+
 
 @Singleton
 class Navigator
@@ -20,12 +20,11 @@ class Navigator
     // private fun showLogin(context: Context) = context.startActivity(LoginActivity.callingIntent(context))
 
     fun showMain(context: Context) {
-        showMovies(context)
-
-        /*when (authenticator.userLoggedIn()) {
-            true -> showMovies(context)
-            false -> showLogin(context)
-        }*/
+        //showMovies(context)
+        when (authenticator.userLoggedIn()) {
+            true -> showMovies(context)             // TODO: By default -> TRUE
+            //false -> showLogin(context)
+        }
     }
 
     private fun showMovies(context: Context) = context.startActivity(MoviesActivity.callingIntent(context))
