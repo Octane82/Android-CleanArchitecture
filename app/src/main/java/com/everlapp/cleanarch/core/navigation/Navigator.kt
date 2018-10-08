@@ -7,7 +7,7 @@ import android.net.Uri
 import android.view.View
 import com.everlapp.cleanarch.core.extension.empty
 import com.everlapp.cleanarch.features.login.Authenticator
-import com.everlapp.cleanarch.features.movies.MoviesActivity
+import com.everlapp.cleanarch.features.movies.ui.MoviesActivity
 
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -20,7 +20,6 @@ class Navigator
     // private fun showLogin(context: Context) = context.startActivity(LoginActivity.callingIntent(context))
 
     fun showMain(context: Context) {
-        //showMovies(context)
         when (authenticator.userLoggedIn()) {
             true -> showMovies(context)             // TODO: By default -> TRUE
             //false -> showLogin(context)

@@ -3,6 +3,8 @@ package com.everlapp.cleanarch.features.movies
 import com.everlapp.cleanarch.core.exception.Failure
 import com.everlapp.cleanarch.core.functional.Either
 import com.everlapp.cleanarch.core.interactor.UseCase
+import com.everlapp.cleanarch.features.movies.data.MoviesRepository
+import com.everlapp.cleanarch.features.movies.dto.Movie
 import javax.inject.Inject
 
 class GetMovies

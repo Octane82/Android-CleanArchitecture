@@ -1,4 +1,4 @@
-package com.everlapp.cleanarch.features.movies
+package com.everlapp.cleanarch.features.movies.ui
 
 import android.os.Bundle
 import android.support.annotation.StringRes
@@ -10,6 +10,10 @@ import com.everlapp.cleanarch.core.extension.*
 
 import com.everlapp.cleanarch.core.navigation.Navigator
 import com.everlapp.cleanarch.core.platform.BaseFragment
+import com.everlapp.cleanarch.features.movies.MovieFailure
+import com.everlapp.cleanarch.features.movies.MovieView
+import com.everlapp.cleanarch.features.movies.MoviesAdapter
+import com.everlapp.cleanarch.features.movies.MoviesViewModel
 import kotlinx.android.synthetic.main.fragment_movies.*
 import javax.inject.Inject
 

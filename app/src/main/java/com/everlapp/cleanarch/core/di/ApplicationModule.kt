@@ -3,7 +3,7 @@ package com.everlapp.cleanarch.core.di
 import android.content.Context
 import com.everlapp.cleanarch.AndroidApplication
 import com.everlapp.cleanarch.BuildConfig
-import com.everlapp.cleanarch.features.movies.MoviesRepository
+import com.everlapp.cleanarch.features.movies.data.MoviesRepository
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

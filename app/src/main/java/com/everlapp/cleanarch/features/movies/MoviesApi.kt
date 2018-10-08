@@ -1,5 +1,7 @@
 package com.everlapp.cleanarch.features.movies
 
+import com.everlapp.cleanarch.features.movies.dto.MovieDetailsEntity
+import com.everlapp.cleanarch.features.movies.dto.MovieEntity
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

@@ -19,13 +19,17 @@ abstract class UseCase<out Type, in Params> where Type : Any {
     abstract suspend fun run(params: Params) : Either<Failure, Type>
 
     operator fun invoke(params: Params, onResult: (Either<Failure, Type>) -> Unit = {}) {
-//        val job = GlobalScope.async(Dispatchers.Default, CoroutineStart.DEFAULT, null, { run(params) })
-//        GlobalScope.launch(UI, CoroutineStart.DEFAULT, null, { onResult(job.await()) })
+        //val job = GlobalScope.async(Dispatchers.Default, CoroutineStart.DEFAULT, null, { run(params) })
+        //GlobalScope.launch(UI, CoroutineStart.DEFAULT, null, { onResult(job.await()) })
 
         val job = async(CommonPool) { run(params) }
         launch(UI) { onResult(job.await()) }
 
+
         // TODO: Add new coroutine methods !!!
+        // val job = GlobalScope.async { run(params) }
+        // GlobalScope.launch { onResult(job.await()) }
+
     }
 
     class None

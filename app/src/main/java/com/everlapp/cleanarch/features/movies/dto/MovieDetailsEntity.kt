@@ -1,4 +1,4 @@
-package com.everlapp.cleanarch.features.movies
+package com.everlapp.cleanarch.features.movies.dto
 
 import com.everlapp.cleanarch.core.extension.empty
 

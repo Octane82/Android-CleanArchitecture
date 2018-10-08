@@ -3,7 +3,7 @@ package com.everlapp.cleanarch.core.di
 import com.everlapp.cleanarch.AndroidApplication
 import com.everlapp.cleanarch.core.di.viewmodel.ViewModelModule
 import com.everlapp.cleanarch.core.navigation.RouteActivity
-import com.everlapp.cleanarch.features.movies.MoviesFragment
+import com.everlapp.cleanarch.features.movies.ui.MoviesFragment
 import dagger.Component
 import javax.inject.Singleton
 

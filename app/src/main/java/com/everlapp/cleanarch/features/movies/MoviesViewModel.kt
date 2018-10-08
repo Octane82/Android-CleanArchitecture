@@ -3,6 +3,7 @@ package com.everlapp.cleanarch.features.movies
 import android.arch.lifecycle.MutableLiveData
 import com.everlapp.cleanarch.core.interactor.UseCase
 import com.everlapp.cleanarch.core.platform.BaseViewModel
+import com.everlapp.cleanarch.features.movies.dto.Movie
 import javax.inject.Inject
 
 

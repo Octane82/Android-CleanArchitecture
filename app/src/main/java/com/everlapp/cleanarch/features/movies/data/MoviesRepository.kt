@@ -1,9 +1,12 @@
-package com.everlapp.cleanarch.features.movies
+package com.everlapp.cleanarch.features.movies.data
 
 
 import com.everlapp.cleanarch.core.exception.Failure
 import com.everlapp.cleanarch.core.functional.Either
 import com.everlapp.cleanarch.core.platform.NetworkHandler
+import com.everlapp.cleanarch.features.movies.dto.Movie
+import com.everlapp.cleanarch.features.movies.dto.MovieDetails
+import com.everlapp.cleanarch.features.movies.MoviesService
 import retrofit2.Call
 import javax.inject.Inject
 
