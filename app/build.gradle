@@ -81,10 +81,10 @@ dependencies {
     implementation "android.arch.lifecycle:reactivestreams:$lifecycle_version"
     // optional - Test helpers for LiveData
     testImplementation "android.arch.core:core-testing:$lifecycle_version"
-    // Room Database
+    // Room DbRoom
     implementation "android.arch.persistence.room:runtime:$lifecycle_version"
     implementation "android.arch.persistence.room:rxjava2:$lifecycle_version"
-    annotationProcessor "android.arch.persistence.room:compiler:$lifecycle_version"
+    kapt "android.arch.persistence.room:compiler:$lifecycle_version"
 
 
     // Retrofit
