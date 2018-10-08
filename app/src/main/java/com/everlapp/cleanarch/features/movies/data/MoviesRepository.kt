@@ -6,7 +6,7 @@ import com.everlapp.cleanarch.core.functional.Either
 import com.everlapp.cleanarch.core.platform.NetworkHandler
 import com.everlapp.cleanarch.features.movies.dto.Movie
 import com.everlapp.cleanarch.features.movies.dto.MovieDetails
-import com.everlapp.cleanarch.features.movies.MoviesService
+import com.everlapp.cleanarch.features.movies.data.network.MoviesService
 import retrofit2.Call
 import javax.inject.Inject
 

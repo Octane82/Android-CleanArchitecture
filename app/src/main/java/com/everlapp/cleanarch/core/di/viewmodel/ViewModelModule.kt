@@ -2,7 +2,7 @@ package com.everlapp.cleanarch.core.di.viewmodel
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
-import com.everlapp.cleanarch.features.movies.MoviesViewModel
+import com.everlapp.cleanarch.features.movies.view.MoviesViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

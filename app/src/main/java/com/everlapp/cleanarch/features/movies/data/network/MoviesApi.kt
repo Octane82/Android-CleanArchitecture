@@ -1,4 +1,4 @@
-package com.everlapp.cleanarch.features.movies
+package com.everlapp.cleanarch.features.movies.data.network
 
 import com.everlapp.cleanarch.features.movies.dto.MovieDetailsEntity
 import com.everlapp.cleanarch.features.movies.dto.MovieEntity

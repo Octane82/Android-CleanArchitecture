@@ -1,4 +1,4 @@
-package com.everlapp.cleanarch.features.movies
+package com.everlapp.cleanarch.features.movies.view.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -7,6 +7,7 @@ import com.everlapp.cleanarch.R
 import com.everlapp.cleanarch.core.extension.inflate
 import com.everlapp.cleanarch.core.extension.loadFromUrl
 import com.everlapp.cleanarch.core.navigation.Navigator
+import com.everlapp.cleanarch.features.movies.dto.MovieView
 import kotlinx.android.synthetic.main.row_movie.view.*
 import javax.inject.Inject
 import kotlin.properties.Delegates

@@ -1,4 +1,4 @@
-package com.everlapp.cleanarch.features.movies.ui
+package com.everlapp.cleanarch.features.movies.view
 
 import android.content.Context
 import android.content.Intent

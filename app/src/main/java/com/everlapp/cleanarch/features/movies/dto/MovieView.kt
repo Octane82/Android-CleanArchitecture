@@ -1,4 +1,4 @@
-package com.everlapp.cleanarch.features.movies
+package com.everlapp.cleanarch.features.movies.dto
 
 import android.os.Parcel
 import com.everlapp.cleanarch.core.platform.KParcelable

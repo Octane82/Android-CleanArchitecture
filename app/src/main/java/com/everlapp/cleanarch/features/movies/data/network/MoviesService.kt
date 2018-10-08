@@ -1,4 +1,4 @@
-package com.everlapp.cleanarch.features.movies
+package com.everlapp.cleanarch.features.movies.data.network
 
 import retrofit2.Retrofit
 import javax.inject.Inject

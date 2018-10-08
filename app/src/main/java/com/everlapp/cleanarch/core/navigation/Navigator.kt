@@ -7,7 +7,7 @@ import android.net.Uri
 import android.view.View
 import com.everlapp.cleanarch.core.extension.empty
 import com.everlapp.cleanarch.features.login.Authenticator
-import com.everlapp.cleanarch.features.movies.ui.MoviesActivity
+import com.everlapp.cleanarch.features.movies.view.MoviesActivity
 
 import javax.inject.Inject
 import javax.inject.Singleton
