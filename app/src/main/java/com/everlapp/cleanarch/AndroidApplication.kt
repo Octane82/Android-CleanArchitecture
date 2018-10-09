@@ -4,6 +4,7 @@ import android.app.Application
 import com.everlapp.cleanarch.core.di.ApplicationComponent
 import com.everlapp.cleanarch.core.di.ApplicationModule
 import com.everlapp.cleanarch.core.di.DaggerApplicationComponent
+import timber.log.Timber
 
 class AndroidApplication : Application() {
 
@@ -19,14 +20,24 @@ class AndroidApplication : Application() {
         super.onCreate()
         this.injectMembers()
         this.initializeLeakDetection()
+        this.initializeTimber()
     }
 
 
     private fun injectMembers() = appComponent.inject(this)
 
+
+
     // TODO: Add later !!! (Memory leaks detection)
     private fun initializeLeakDetection() {
 
+    }
+
+
+    private fun initializeTimber() {
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
     }
 
 }
