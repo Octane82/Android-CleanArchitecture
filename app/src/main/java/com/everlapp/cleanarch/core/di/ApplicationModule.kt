@@ -3,7 +3,10 @@ package com.everlapp.cleanarch.core.di
 import android.content.Context
 import com.everlapp.cleanarch.AndroidApplication
 import com.everlapp.cleanarch.BuildConfig
+import com.everlapp.cleanarch.core.data.db.DbRoom
 import com.everlapp.cleanarch.features.movies.data.MoviesRepository
+import com.everlapp.cleanarch.features.tasks.data.TaskDataDao
+import com.everlapp.cleanarch.features.tasks.data.TasksRepository
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -41,6 +44,19 @@ class ApplicationModule(private val application: AndroidApplication) {
     @Provides
     @Singleton
     fun provideMoviesRepository(dataSource: MoviesRepository.Network) : MoviesRepository = dataSource
+
+
+
+    // ----------- Test ----------------------------------------------------------------------------
+
+    @Provides
+    @Singleton
+    fun provideRoomDb() : DbRoom? = DbRoom.getInstance(application)
+
+
+    @Provides
+    @Singleton
+    fun provideTasksRepository(dataSource: TasksRepository.Database) : TasksRepository = dataSource
 
 
 }

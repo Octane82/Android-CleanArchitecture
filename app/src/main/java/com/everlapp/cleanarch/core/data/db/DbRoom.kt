@@ -4,6 +4,7 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
+import com.everlapp.cleanarch.features.tasks.data.TaskDataDao
 import com.everlapp.cleanarch.features.tasks.dto.TaskData
 
 
@@ -33,5 +34,9 @@ abstract class DbRoom : RoomDatabase() {
         }
 
     }
+
+
+    abstract fun taskDataDao() : TaskDataDao
+
 
 }
