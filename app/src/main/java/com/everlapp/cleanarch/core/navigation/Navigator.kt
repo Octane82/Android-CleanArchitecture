@@ -8,6 +8,7 @@ import android.view.View
 import com.everlapp.cleanarch.core.extension.empty
 import com.everlapp.cleanarch.features.login.Authenticator
 import com.everlapp.cleanarch.features.movies.view.MoviesActivity
+import com.everlapp.cleanarch.features.tasks.view.TasksActivity
 
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -21,10 +22,14 @@ class Navigator
 
     fun showMain(context: Context) {
         when (authenticator.userLoggedIn()) {
-            true -> showMovies(context)             // TODO: By default -> TRUE
+            true -> showTasks(context)              // TODO: By default -> TRUE
+
+            //true -> showMovies(context)
             //false -> showLogin(context)
         }
     }
+
+    private fun showTasks(context: Context) = context.startActivity(TasksActivity.callingIntent(context))
 
     private fun showMovies(context: Context) = context.startActivity(MoviesActivity.callingIntent(context))
 

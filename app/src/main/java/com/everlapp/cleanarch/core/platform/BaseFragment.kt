@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.toolbar.*
 import javax.inject.Inject
 
 import com.everlapp.cleanarch.R.color
+import com.everlapp.cleanarch.core.extension.inflate
 
 /**
  * Base Fragment class with helper methods for handling views and back button events.
@@ -34,8 +35,14 @@ abstract class BaseFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
-            inflater.inflate(layoutId(), container, false)
+    /*override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
+            inflater.inflate(layoutId(), container, false)*/
+
+    override fun onCreateView(inflater: LayoutInflater,
+                              container: ViewGroup?,
+                              savedInstanceState: Bundle?): View?
+            = container?.inflate(layoutId())
+
 
     open fun onBackPressed() {}
 
