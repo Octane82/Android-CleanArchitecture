@@ -1,4 +1,4 @@
-package com.everlapp.cleanarch.features.tasks
+package com.everlapp.cleanarch.features.tasks.domain
 
 import com.everlapp.cleanarch.core.exception.Failure
 import com.everlapp.cleanarch.core.functional.Either

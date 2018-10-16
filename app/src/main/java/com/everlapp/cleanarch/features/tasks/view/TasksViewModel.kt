@@ -3,13 +3,15 @@ package com.everlapp.cleanarch.features.tasks.view
 import android.arch.lifecycle.MutableLiveData
 import com.everlapp.cleanarch.core.interactor.UseCase
 import com.everlapp.cleanarch.core.platform.BaseViewModel
-import com.everlapp.cleanarch.features.tasks.GetTasks
+import com.everlapp.cleanarch.features.tasks.domain.AddTask
+import com.everlapp.cleanarch.features.tasks.domain.GetTasks
 import com.everlapp.cleanarch.features.tasks.dto.TaskData
 import timber.log.Timber
 import javax.inject.Inject
 
 class TasksViewModel
-@Inject constructor(private val getTasks: GetTasks) : BaseViewModel() {
+@Inject constructor(private val getTasks: GetTasks,
+                    private val addTask: AddTask) : BaseViewModel() {
 
     var tasks: MutableLiveData<List<TaskData>> = MutableLiveData()
 
@@ -20,8 +22,8 @@ class TasksViewModel
     }
 
 
-    fun addNewTaskToDb() {
-        Timber.d("Add new task to Db")
+    fun addNewTaskToDb(message: String) {
+        addTask(TaskData(1, message, System.currentTimeMillis()))
     }
 
 }

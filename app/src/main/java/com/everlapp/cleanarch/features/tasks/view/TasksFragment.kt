@@ -57,7 +57,9 @@ class TasksFragment : BaseFragment() {
         // todo Show task - tasksListAdapter.clickListener
 
         // Add new Task
-        btnSend.setOnClickListener { tasksViewModel.addNewTaskToDb() }
+        btnSend.setOnClickListener {
+            tasksViewModel.addNewTaskToDb(etMessage.text.toString())
+        }
     }
 
 

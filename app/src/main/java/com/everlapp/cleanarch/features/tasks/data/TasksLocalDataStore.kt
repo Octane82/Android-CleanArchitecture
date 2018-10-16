@@ -8,8 +8,12 @@ import javax.inject.Singleton
 @Singleton
 class TasksLocalDataStore @Inject constructor(private val dbRoom: DbRoom?) {
 
-    fun getAll() : List<TaskData>? {
-        return dbRoom?.taskDataDao()?.getAll()
-    }
+    fun getAll() : List<TaskData>? =
+            dbRoom?.taskDataDao()?.getAll()
+
+
+
+    fun addTask(taskData: TaskData) : Long? =
+            dbRoom?.taskDataDao()?.insert(taskData)
 
 }

@@ -13,7 +13,7 @@ interface TaskDataDao {
     fun getAll() : List<TaskData>
 
     @Insert(onConflict = REPLACE)
-    fun insert(taskData: TaskData)
+    fun insert(taskData: TaskData) : Long
 
     @Query("DELETE from taskData")
     fun deleteAll()
