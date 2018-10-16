@@ -1,17 +1,15 @@
 package com.everlapp.cleanarch.core.extension
 
-import android.graphics.drawable.Drawable
+import android.app.Activity
 import android.support.annotation.LayoutRes
-import android.support.transition.Transition
-import android.support.v4.app.FragmentActivity
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.bumptech.glide.request.target.BaseTarget
-import com.bumptech.glide.request.target.SizeReadyCallback
 
 
 fun View.cancelTransition() {
@@ -32,6 +30,23 @@ fun ImageView.loadFromUrl(url: String) =
                 .load(url)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(this)!!
+
+
+/**
+ * ------------------ TOASTS --------------------------------------------
+ */
+
+
+fun Activity.toast(message : CharSequence, duration : Int = Toast.LENGTH_LONG) {
+    Toast.makeText(this, message, duration).show()
+}
+
+
+fun Fragment.toast(message : CharSequence, duration : Int = Toast.LENGTH_LONG) {
+    Toast.makeText(this.context, message, duration).show()
+}
+
+
 
 // TODO: !!!
 

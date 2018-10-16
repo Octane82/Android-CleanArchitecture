@@ -5,6 +5,7 @@ import com.everlapp.cleanarch.core.interactor.UseCase
 import com.everlapp.cleanarch.core.platform.BaseViewModel
 import com.everlapp.cleanarch.features.tasks.GetTasks
 import com.everlapp.cleanarch.features.tasks.dto.TaskData
+import timber.log.Timber
 import javax.inject.Inject
 
 class TasksViewModel
@@ -16,6 +17,11 @@ class TasksViewModel
 
     private fun handleTasksList(tasks: List<TaskData>) {
         this.tasks.value = tasks.map { TaskData(it.id, it.name, it.createdAt) }
+    }
+
+
+    fun addNewTaskToDb() {
+        Timber.d("Add new task to Db")
     }
 
 }
