@@ -1,5 +1,6 @@
 package com.everlapp.cleanarch.features.tasks.data
 
+import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.OnConflictStrategy.REPLACE
@@ -10,7 +11,7 @@ import com.everlapp.cleanarch.features.tasks.dto.TaskData
 interface TaskDataDao {
 
     @Query("SELECT * FROM taskData")
-    fun getAll() : List<TaskData>
+    fun getAll() : LiveData<List<TaskData>>
 
     @Insert(onConflict = REPLACE)
     fun insert(taskData: TaskData) : Long

@@ -1,5 +1,6 @@
 package com.everlapp.cleanarch.features.tasks.data
 
+import android.arch.lifecycle.LiveData
 import com.everlapp.cleanarch.core.exception.Failure
 import com.everlapp.cleanarch.core.functional.Either
 import com.everlapp.cleanarch.features.tasks.dto.TaskData
@@ -11,7 +12,7 @@ import javax.inject.Inject
  */
 interface TasksRepository {
 
-    fun tasks() : Either<Failure, List<TaskData>>
+    fun tasks() : Either<Failure, LiveData<List<TaskData>>>
 
     fun addTask(task: TaskData) : Either<Failure, Boolean>
 
@@ -19,7 +20,7 @@ interface TasksRepository {
     class Database @Inject constructor (private val localDataStore: TasksLocalDataStore) : TasksRepository {
 
 
-        override fun tasks(): Either<Failure, List<TaskData>> {
+        override fun tasks(): Either<Failure, LiveData<List<TaskData>>> {
 
             // TODO("not implemented") To change body of created functions use File | Settings | File Templates.
             // localDataStore.getAll()
@@ -31,6 +32,8 @@ interface TasksRepository {
             listTasksDataStore.add(TaskData(2, "Third task", System.currentTimeMillis()))*/
 
             val tasks = localDataStore.getAll()
+
+            //Timber.d("TAS-REPO >>> ${tasks?.value?.size}")
 
             tasks?.let {
                 return Either.Right(tasks)

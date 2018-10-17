@@ -1,5 +1,6 @@
 package com.everlapp.cleanarch.features.tasks.view
 
+import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
@@ -44,6 +45,13 @@ class TasksFragment : BaseFragment() {
         initializeView()
 
         tasksViewModel.loadTasks()
+
+        // todo TEST !!!!!!!!!
+        tasksViewModel.loadTSK(this)    // OK - Work !!!
+        tasksViewModel.tasks.observe(this, Observer {
+            Timber.d("YAY Observe: size: ${it?.size}")
+
+        })
     }
 
 
@@ -69,7 +77,6 @@ class TasksFragment : BaseFragment() {
         Timber.d("Render tasks list SIZE: ${tasks?.size}")
 
         tasksListAdapter.collection = tasks.orEmpty()
-            // tasksListAdapter.notifyDataSetChanged()
     }
 
 
