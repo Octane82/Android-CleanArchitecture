@@ -23,7 +23,10 @@ class TasksViewModel
 
 
     fun addNewTaskToDb(message: String) {
-        addTask(TaskData(1, message, System.currentTimeMillis()))
+        val task = TaskData()
+        task.name = message
+
+        addTask(task)
     }
 
 }

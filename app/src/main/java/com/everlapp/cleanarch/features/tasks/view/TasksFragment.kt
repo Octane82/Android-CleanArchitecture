@@ -5,10 +5,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.everlapp.cleanarch.R
 import com.everlapp.cleanarch.core.exception.Failure
-import com.everlapp.cleanarch.core.extension.failure
-import com.everlapp.cleanarch.core.extension.observe
-import com.everlapp.cleanarch.core.extension.toast
-import com.everlapp.cleanarch.core.extension.viewModel
+import com.everlapp.cleanarch.core.extension.*
 import com.everlapp.cleanarch.core.platform.BaseFragment
 import com.everlapp.cleanarch.features.tasks.dto.TaskData
 import com.everlapp.cleanarch.features.tasks.view.adapters.TasksListAdapter
@@ -54,11 +51,15 @@ class TasksFragment : BaseFragment() {
         tasksList.layoutManager = LinearLayoutManager(activity)
         tasksList.adapter = tasksListAdapter
 
-        // todo Show task - tasksListAdapter.clickListener
+        // Show task detailed screen
+        tasksListAdapter.clickListener = { taskData, navigationExtras ->
+                        kotlin.run { toast("TODO: Go to task detail !!!") } }
 
         // Add new Task
         btnSend.setOnClickListener {
             tasksViewModel.addNewTaskToDb(etMessage.text.toString())
+            etMessage.setText("")
+            hideKeyboard()
         }
     }
 
@@ -68,6 +69,7 @@ class TasksFragment : BaseFragment() {
         Timber.d("Render tasks list SIZE: ${tasks?.size}")
 
         tasksListAdapter.collection = tasks.orEmpty()
+            // tasksListAdapter.notifyDataSetChanged()
     }
 
 

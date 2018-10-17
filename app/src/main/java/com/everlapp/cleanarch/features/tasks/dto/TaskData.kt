@@ -16,4 +16,4 @@ data class TaskData(
         @ColumnInfo(name = "timestamp")
         var createdAt: Long
 
-)
+) { constructor(): this(null, "", System.currentTimeMillis()) }

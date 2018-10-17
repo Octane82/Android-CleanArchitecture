@@ -35,7 +35,7 @@ class TasksListAdapter
         fun bind(taskData: TaskData, clickListener: (TaskData, Navigator.Extras) -> Unit) {
             itemView.taskName.text = taskData.name
             itemView.taskDate.text = taskData.createdAt.toString()
-            // todo itemView.setOnClickListener { clickListener(movieView, Navigator.Extras(itemView.moviePoster)) }
+            itemView.setOnClickListener { clickListener(taskData, Navigator.Extras(itemView.taskName)) }
         }
     }
 
