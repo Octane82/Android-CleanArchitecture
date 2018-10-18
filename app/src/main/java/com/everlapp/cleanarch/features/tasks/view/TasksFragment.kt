@@ -1,12 +1,16 @@
 package com.everlapp.cleanarch.features.tasks.view
 
+import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.everlapp.cleanarch.R
 import com.everlapp.cleanarch.core.exception.Failure
-import com.everlapp.cleanarch.core.extension.*
+import com.everlapp.cleanarch.core.extension.failure
+import com.everlapp.cleanarch.core.extension.hideKeyboard
+import com.everlapp.cleanarch.core.extension.toast
+import com.everlapp.cleanarch.core.extension.viewModel
 import com.everlapp.cleanarch.core.platform.BaseFragment
 import com.everlapp.cleanarch.features.tasks.dto.TaskData
 import com.everlapp.cleanarch.features.tasks.view.adapters.TasksListAdapter
@@ -31,11 +35,11 @@ class TasksFragment : BaseFragment() {
 
         Timber.d("onCreate -> TasksFragment")
 
+        // Init View model
         tasksViewModel = viewModel(viewModelFactory) {
-            observe(tasks, ::renderTaskList)
+            //observe(tasks, ::renderTaskList)
             failure(failure, ::handleFailure)
         }
-
     }
 
 
@@ -44,13 +48,13 @@ class TasksFragment : BaseFragment() {
 
         initializeView()
 
-        tasksViewModel.loadTasks()
-
-        // todo TEST !!!!!!!!!
-        tasksViewModel.loadTSK(this)    // OK - Work !!!
-        tasksViewModel.tasks.observe(this, Observer {
-            Timber.d("YAY Observe: size: ${it?.size}")
-
+        tasksViewModel.loadTasks(this, object : TasksViewModel.DataLoadListener{
+            override fun onLoadData(data: LiveData<List<TaskData>>) {
+                data.observe(this@TasksFragment, Observer {
+                    Timber.d("Observer DATA in FRAGMENT:::: ${it?.size}")
+                    renderTaskList(it)
+                })
+            }
         })
     }
 
@@ -75,7 +79,6 @@ class TasksFragment : BaseFragment() {
 
     private fun renderTaskList(tasks: List<TaskData>?) {
         Timber.d("Render tasks list SIZE: ${tasks?.size}")
-
         tasksListAdapter.collection = tasks.orEmpty()
     }
 

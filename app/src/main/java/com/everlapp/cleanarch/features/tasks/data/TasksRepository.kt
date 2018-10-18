@@ -12,38 +12,30 @@ import javax.inject.Inject
  */
 interface TasksRepository {
 
+    /**
+     * Get all tasks from Db
+     */
     fun tasks() : Either<Failure, LiveData<List<TaskData>>>
 
+    /**
+     * Add single task to Db
+     */
     fun addTask(task: TaskData) : Either<Failure, Boolean>
 
 
-    class Database @Inject constructor (private val localDataStore: TasksLocalDataStore) : TasksRepository {
+    /**
+     * Database storage
+     */
+    class Database
+    @Inject constructor (private val localDataStore: TasksLocalDataStore) : TasksRepository {
 
 
         override fun tasks(): Either<Failure, LiveData<List<TaskData>>> {
-
-            // TODO("not implemented") To change body of created functions use File | Settings | File Templates.
-            // localDataStore.getAll()
-
-
-            /*val listTasksDataStore = mutableListOf<TaskData>()
-            listTasksDataStore.add(TaskData(0, "First task", System.currentTimeMillis()))
-            listTasksDataStore.add(TaskData(1, "Second task", System.currentTimeMillis()))
-            listTasksDataStore.add(TaskData(2, "Third task", System.currentTimeMillis()))*/
-
             val tasks = localDataStore.getAll()
-
-            //Timber.d("TAS-REPO >>> ${tasks?.value?.size}")
-
             tasks?.let {
                 return Either.Right(tasks)
             }
-
-            // TODO: return Success or Error
-            //return Either.Right(localDataStore.getAll())
-
             return Either.Left(Failure.DatabaseError())
-
         }
 
 
