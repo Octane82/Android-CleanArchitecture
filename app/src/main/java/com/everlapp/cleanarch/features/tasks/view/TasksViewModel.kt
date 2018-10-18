@@ -1,6 +1,6 @@
 package com.everlapp.cleanarch.features.tasks.view
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.everlapp.cleanarch.core.interactor.UseCase
 import com.everlapp.cleanarch.core.platform.BaseViewModel
 import com.everlapp.cleanarch.features.tasks.domain.AddTask

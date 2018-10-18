@@ -1,6 +1,6 @@
 package com.everlapp.cleanarch.features.tasks.domain
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.everlapp.cleanarch.core.exception.Failure
 import com.everlapp.cleanarch.core.functional.Either
 import com.everlapp.cleanarch.core.interactor.UseCase

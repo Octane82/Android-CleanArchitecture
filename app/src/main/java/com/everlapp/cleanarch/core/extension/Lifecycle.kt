@@ -1,8 +1,8 @@
 package com.everlapp.cleanarch.core.extension
 
-import android.arch.lifecycle.LifecycleOwner
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import com.everlapp.cleanarch.core.exception.Failure
 
 

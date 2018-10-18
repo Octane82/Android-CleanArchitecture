@@ -1,7 +1,7 @@
 package com.everlapp.cleanarch.core.di.viewmodel
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.everlapp.cleanarch.features.movies.view.MoviesViewModel
 import com.everlapp.cleanarch.features.tasks.view.TasksViewModel
 import dagger.Binds

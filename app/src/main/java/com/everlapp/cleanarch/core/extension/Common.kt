@@ -2,7 +2,7 @@ package com.everlapp.cleanarch.core.extension
 
 import android.app.Activity
 import android.content.Context.INPUT_METHOD_SERVICE
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.inputmethod.InputMethodManager
 
 

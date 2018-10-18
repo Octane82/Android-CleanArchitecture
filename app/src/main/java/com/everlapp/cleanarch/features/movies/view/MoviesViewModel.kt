@@ -1,6 +1,6 @@
 package com.everlapp.cleanarch.features.movies.view
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import com.everlapp.cleanarch.core.interactor.UseCase
 import com.everlapp.cleanarch.core.platform.BaseViewModel
 import com.everlapp.cleanarch.features.movies.domain.GetMovies

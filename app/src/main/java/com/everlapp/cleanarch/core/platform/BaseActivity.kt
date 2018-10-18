@@ -1,7 +1,7 @@
 package com.everlapp.cleanarch.core.platform
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.everlapp.cleanarch.R.id
 import com.everlapp.cleanarch.R.layout
 import com.everlapp.cleanarch.core.extension.inTransaction

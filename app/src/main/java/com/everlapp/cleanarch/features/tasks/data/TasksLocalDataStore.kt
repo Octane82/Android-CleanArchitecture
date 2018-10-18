@@ -1,6 +1,6 @@
 package com.everlapp.cleanarch.features.tasks.data
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.everlapp.cleanarch.core.data.db.DbRoom
 import com.everlapp.cleanarch.features.tasks.dto.TaskData
 import javax.inject.Inject

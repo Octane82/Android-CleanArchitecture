@@ -1,8 +1,8 @@
 package com.everlapp.cleanarch.features.movies.view
 
 import android.os.Bundle
-import android.support.annotation.StringRes
-import android.support.v7.widget.StaggeredGridLayoutManager
+import androidx.annotation.StringRes
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import android.view.View
 import com.everlapp.cleanarch.R
 import com.everlapp.cleanarch.core.exception.Failure

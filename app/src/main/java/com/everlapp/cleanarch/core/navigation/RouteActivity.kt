@@ -1,7 +1,7 @@
 package com.everlapp.cleanarch.core.navigation
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.everlapp.cleanarch.AndroidApplication
 import com.everlapp.cleanarch.core.di.ApplicationComponent
 import javax.inject.Inject
