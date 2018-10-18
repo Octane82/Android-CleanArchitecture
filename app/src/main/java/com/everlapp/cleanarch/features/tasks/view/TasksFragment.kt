@@ -48,7 +48,7 @@ class TasksFragment : BaseFragment() {
 
         initializeView()
 
-        tasksViewModel.loadTasks(this, object : TasksViewModel.DataLoadListener{
+        tasksViewModel.loadTasks(object : TasksViewModel.DataLoadListener{
             override fun onLoadData(data: LiveData<List<TaskData>>) {
                 data.observe(this@TasksFragment, Observer {
                     Timber.d("Observer DATA in FRAGMENT:::: ${it?.size}")

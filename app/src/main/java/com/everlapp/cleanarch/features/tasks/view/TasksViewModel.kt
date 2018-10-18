@@ -1,6 +1,5 @@
 package com.everlapp.cleanarch.features.tasks.view
 
-import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.LiveData
 import com.everlapp.cleanarch.core.interactor.UseCase
 import com.everlapp.cleanarch.core.platform.BaseViewModel
@@ -19,21 +18,15 @@ class TasksViewModel
         fun onLoadData(data: LiveData<List<TaskData>>)
     }
 
-    fun loadTasks(lifecycle: LifecycleOwner, dataLoadListener: DataLoadListener) =
-            getTasks(UseCase.None()) { it -> it.either(::handleFailure) { handleTaskList(lifecycle, it, dataLoadListener) } }
+    fun loadTasks(dataLoadListener: DataLoadListener) =
+            getTasks(UseCase.None()) { it -> it.either(
+                    ::handleFailure)
+                    { handleTaskList(it, dataLoadListener) } }
 
 
-    private fun handleTaskList(lifecycle: LifecycleOwner,
-                               tasks: LiveData<List<TaskData>>,
+    private fun handleTaskList(tasks: LiveData<List<TaskData>>,
                                dataLoadListener: DataLoadListener)  {
-
         dataLoadListener.onLoadData(tasks)
-
-       /* tasks.observe(lifecycle, Observer { list -> kotlin.run {
-            Timber.d("Obsssssssssssssssss: ${list?.size}")
-
-        } })*/
-
     }
 
 
