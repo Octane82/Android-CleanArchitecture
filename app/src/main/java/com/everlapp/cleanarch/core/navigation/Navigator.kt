@@ -5,9 +5,12 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.view.View
+import androidx.fragment.app.FragmentActivity
 import com.everlapp.cleanarch.core.extension.empty
 import com.everlapp.cleanarch.features.login.Authenticator
 import com.everlapp.cleanarch.features.movies.view.MoviesActivity
+import com.everlapp.cleanarch.features.tasks.dto.TaskData
+import com.everlapp.cleanarch.features.tasks.view.TaskDetailsActivity
 import com.everlapp.cleanarch.features.tasks.view.TasksActivity
 
 import javax.inject.Inject
@@ -30,6 +33,13 @@ class Navigator
     }
 
     private fun showTasks(context: Context) = context.startActivity(TasksActivity.callingIntent(context))
+
+    fun showTaskDetail(activity: FragmentActivity, task: TaskData, navigationExtras: Extras) {
+        val intent = TaskDetailsActivity.callingIntent(activity)
+        activity.startActivity(intent)
+    }
+
+
 
     private fun showMovies(context: Context) = context.startActivity(MoviesActivity.callingIntent(context))
 
@@ -67,6 +77,8 @@ class Navigator
 
         return intent
     }
+
+
 
     class Extras(val transitionSharedElement: View)
 }
