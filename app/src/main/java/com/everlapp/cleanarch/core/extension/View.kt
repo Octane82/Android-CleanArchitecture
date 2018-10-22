@@ -22,6 +22,10 @@ fun View.visible() { this.visibility = View.VISIBLE }
 
 fun View.invisible() { this.visibility = View.GONE }
 
+/**
+ * Inflate container
+ * Example: val view = container?.inflate(R.layout.news_fragment)
+ */
 fun ViewGroup.inflate(@LayoutRes layoutRes: Int): View =
         LayoutInflater.from(context).inflate(layoutRes, this, false)
 
@@ -45,6 +49,8 @@ fun Activity.toast(message : CharSequence, duration : Int = Toast.LENGTH_LONG) {
 fun Fragment.toast(message : CharSequence, duration : Int = Toast.LENGTH_LONG) {
     Toast.makeText(this.context, message, duration).show()
 }
+
+
 
 
 

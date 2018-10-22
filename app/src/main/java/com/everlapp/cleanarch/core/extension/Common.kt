@@ -4,7 +4,8 @@ import android.app.Activity
 import android.content.Context.INPUT_METHOD_SERVICE
 import androidx.fragment.app.Fragment
 import android.view.inputmethod.InputMethodManager
-
+import androidx.annotation.ColorRes
+import androidx.core.app.ActivityCompat
 
 
 // ----------- Hide keyboard ------------------------------
@@ -21,3 +22,9 @@ fun Fragment.hideKeyboard() {
             this.activity?.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
     inputMethodManager.hideSoftInputFromWindow(this.activity?.currentFocus?.windowToken, 0)
 }
+
+
+/**
+ * Get colorResource from color resource
+ */
+fun Activity.getColorExt(@ColorRes colorResource: Int) : Int = ActivityCompat.getColor(this, colorResource)
