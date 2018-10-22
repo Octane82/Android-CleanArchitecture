@@ -6,12 +6,15 @@ import android.content.Intent
 import android.net.Uri
 import android.view.View
 import androidx.fragment.app.FragmentActivity
+import com.everlapp.cleanarch.R
 import com.everlapp.cleanarch.core.extension.empty
 import com.everlapp.cleanarch.features.login.Authenticator
 import com.everlapp.cleanarch.features.movies.view.MoviesActivity
 import com.everlapp.cleanarch.features.tasks.dto.TaskData
 import com.everlapp.cleanarch.features.tasks.view.TaskDetailsActivity
+import com.everlapp.cleanarch.features.tasks.view.TaskDetailsFragment
 import com.everlapp.cleanarch.features.tasks.view.TasksActivity
+import kotlinx.android.synthetic.main.activity_layout.view.*
 
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -26,17 +29,24 @@ class Navigator
     fun showMain(context: Context) {
         when (authenticator.userLoggedIn()) {
             true -> showTasks(context)              // TODO: By default -> TRUE
-
             //true -> showMovies(context)
             //false -> showLogin(context)
         }
     }
 
-    private fun showTasks(context: Context) = context.startActivity(TasksActivity.callingIntent(context))
+    private fun showTasks(context: Context) =
+            context.startActivity(TasksActivity.callingIntent(context))
 
+    /**
+     * Show task detail fragment
+     * naviExtras - task name
+     */
     fun showTaskDetail(activity: FragmentActivity, task: TaskData, navigationExtras: Extras) {
-        val intent = TaskDetailsActivity.callingIntent(activity)
-        activity.startActivity(intent)
+        activity.supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragmentContainer, TaskDetailsFragment())
+                .addToBackStack(null)
+                .commit()
     }
 
 
