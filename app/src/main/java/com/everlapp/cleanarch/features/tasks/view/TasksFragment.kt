@@ -38,6 +38,8 @@ class TasksFragment : BaseFragment() {
 
         Timber.d("onCreate -> TasksFragment")
 
+        navigator.init(lifecycle)
+
         // Init View model
         tasksViewModel = viewModel(viewModelFactory) {
             //observe(tasks, ::renderTaskList)
