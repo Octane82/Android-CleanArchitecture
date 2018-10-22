@@ -8,6 +8,7 @@ import android.view.View
 import androidx.fragment.app.FragmentActivity
 import com.everlapp.cleanarch.R
 import com.everlapp.cleanarch.core.extension.empty
+import com.everlapp.cleanarch.core.extension.replaceFragment
 import com.everlapp.cleanarch.features.login.Authenticator
 import com.everlapp.cleanarch.features.movies.view.MoviesActivity
 import com.everlapp.cleanarch.features.tasks.dto.TaskData
@@ -42,12 +43,10 @@ class Navigator
      * naviExtras - task name
      */
     fun showTaskDetail(activity: FragmentActivity, task: TaskData, navigationExtras: Extras) {
-        activity.supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.fragmentContainer, TaskDetailsFragment())
-                .addToBackStack(null)
-                .commit()
+        activity.replaceFragment(TaskDetailsFragment(), R.id.fragmentContainer, null)
     }
+
+
 
 
 
