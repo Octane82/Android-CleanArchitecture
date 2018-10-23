@@ -10,6 +10,7 @@ import com.everlapp.cleanarch.R
 import com.everlapp.cleanarch.core.exception.Failure
 import com.everlapp.cleanarch.core.extension.failure
 import com.everlapp.cleanarch.core.extension.hideKeyboard
+import com.everlapp.cleanarch.core.extension.showAlertDialog
 import com.everlapp.cleanarch.core.extension.viewModel
 import com.everlapp.cleanarch.core.navigation.Navigator
 import com.everlapp.cleanarch.core.platform.BaseFragment
@@ -68,7 +69,6 @@ class TasksFragment : BaseFragment() {
         tasksList.adapter = tasksListAdapter
 
         // Show task detailed screen
-        // TODO: Переделать навигацию по фрагментам из одной активити
         tasksListAdapter.clickListener = { taskData, navigationExtras ->
             navigator.showTaskDetail(activity!!, taskData, navigationExtras) }
 
@@ -78,6 +78,8 @@ class TasksFragment : BaseFragment() {
             etMessage.setText("")
             hideKeyboard()
         }
+
+        // todo: AlertDialog btnSend.setOnClickListener { activity?.showAlertDialog("Its a simple ALERT", "YAY") }
     }
 
 

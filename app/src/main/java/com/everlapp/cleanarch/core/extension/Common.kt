@@ -2,10 +2,10 @@ package com.everlapp.cleanarch.core.extension
 
 import android.app.Activity
 import android.content.Context.INPUT_METHOD_SERVICE
-import androidx.fragment.app.Fragment
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.ColorRes
 import androidx.core.app.ActivityCompat
+import androidx.fragment.app.Fragment
 
 
 // ----------- Hide keyboard ------------------------------
