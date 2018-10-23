@@ -1,6 +1,6 @@
 package com.everlapp.cleanarch.core.di
 
-import com.everlapp.cleanarch.AndroidApplication
+import com.everlapp.cleanarch.App
 import com.everlapp.cleanarch.core.di.viewmodel.ViewModelModule
 import com.everlapp.cleanarch.core.navigation.RouteActivity
 import com.everlapp.cleanarch.features.movies.view.MoviesFragment
@@ -12,7 +12,7 @@ import javax.inject.Singleton
 @Component(modules = [ApplicationModule::class, ViewModelModule::class])
 interface ApplicationComponent {
 
-    fun inject(application: AndroidApplication)
+    fun inject(application: App)
     fun inject(routeActivity: RouteActivity)
 
 

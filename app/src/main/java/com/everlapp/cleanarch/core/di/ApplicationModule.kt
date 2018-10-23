@@ -1,11 +1,10 @@
 package com.everlapp.cleanarch.core.di
 
 import android.content.Context
-import com.everlapp.cleanarch.AndroidApplication
+import com.everlapp.cleanarch.App
 import com.everlapp.cleanarch.BuildConfig
 import com.everlapp.cleanarch.core.data.db.DbRoom
 import com.everlapp.cleanarch.features.movies.data.MoviesRepository
-import com.everlapp.cleanarch.features.tasks.data.TaskDataDao
 import com.everlapp.cleanarch.features.tasks.data.TasksRepository
 import dagger.Module
 import dagger.Provides
@@ -16,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-class ApplicationModule(private val application: AndroidApplication) {
+class ApplicationModule(private val application: App) {
 
     @Provides
     @Singleton

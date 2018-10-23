@@ -18,6 +18,11 @@ project.ext {
 
     glideVersion = "4.8.0"
 
+    ciceroneVersion = "4.0.2"
+    threetenabpVersion = "1.1.1"
+
+    leakCanaryVersion = "1.6.2"
+
 //    supportLibraryVersion = "27.1.1"
 //    androidArchVersion = "1.1.1"
 //    moxyVersion = "1.5.5"
@@ -111,8 +116,20 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$glideVersion"
     kapt "com.github.bumptech.glide:compiler:$glideVersion"
 
+    //Cicerone
+    implementation "ru.terrakok.cicerone:cicerone:$ciceroneVersion"
+
+    // ThreeTenABP
+    implementation "com.jakewharton.threetenabp:threetenabp:$threetenabpVersion"
+
     // Timber logger
     implementation "com.jakewharton.timber:timber:$timberVersion"
+
+    // Leak canary
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion"
+    // Optional, if you use support library fragments:
+    debugImplementation "com.squareup.leakcanary:leakcanary-support-fragment:$leakCanaryVersion"
 
 
     // Test dependencies

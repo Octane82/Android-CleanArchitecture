@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.everlapp.cleanarch.AndroidApplication
+import com.everlapp.cleanarch.App
 import com.everlapp.cleanarch.core.di.ApplicationComponent
 import com.everlapp.cleanarch.core.extension.appContext
 import com.everlapp.cleanarch.core.extension.viewContainer
@@ -29,7 +29,7 @@ abstract class BaseFragment : Fragment() {
     abstract fun layoutId(): Int
 
     val appComponent: ApplicationComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
-        (activity?.application as AndroidApplication).appComponent
+        (activity?.application as App).appComponent
     }
 
     @Inject

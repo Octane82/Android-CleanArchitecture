@@ -1,16 +1,15 @@
 package com.everlapp.cleanarch.features.tasks.view
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.View
 import androidx.annotation.StringRes
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.everlapp.cleanarch.R
 import com.everlapp.cleanarch.core.exception.Failure
 import com.everlapp.cleanarch.core.extension.failure
 import com.everlapp.cleanarch.core.extension.hideKeyboard
-import com.everlapp.cleanarch.core.extension.toast
 import com.everlapp.cleanarch.core.extension.viewModel
 import com.everlapp.cleanarch.core.navigation.Navigator
 import com.everlapp.cleanarch.core.platform.BaseFragment
@@ -38,7 +37,7 @@ class TasksFragment : BaseFragment() {
 
         Timber.d("onCreate -> TasksFragment")
 
-        navigator.init(lifecycle)
+        navigator.init(activity)
 
         // Init View model
         tasksViewModel = viewModel(viewModelFactory) {
